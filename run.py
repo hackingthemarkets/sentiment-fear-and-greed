@@ -56,7 +56,7 @@ class VIXData(bt.feeds.GenericCSVData):
         ('openinterest', -1)
     )
 
-spy_combined_csv_file = "datasets/spy-put-call-fear-greed-vix-tqqq.csv"
+spy_combined_csv_file = "datasets/spy-put-call-fear-greed-vix.csv"
 put_csv_file = "datasets/put-call.csv"
 vix_csv_file = "datasets/vix.csv"
 fear_greed_csv_file = "datasets/fear-greed.csv"
