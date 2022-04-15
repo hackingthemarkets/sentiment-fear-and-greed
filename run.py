@@ -1,4 +1,5 @@
 import backtrader as bt
+import backtrader.analyzers as btanalyzers
 from FearGreedStrategy import FearGreedStrategy
 from PutCallStrategy import PutCallStrategy
 from VIXStrategy import VIXStrategy
@@ -75,5 +76,11 @@ cerebro.addstrategy(FearGreedStrategy)
 #cerebro.addstrategy(PutCallStrategy)
 #cerebro.addstrategy(VIXStrategy)
 
-cerebro.run()
+# Analyzor
+cerebro.addanalyzer(btanalyzers.SharpeRatio, _name='mysharpe')
+
+thestrats=cerebro.run()
+thestrat = thestrats[0]
+print('Sharpe Ratio:', thestrat.analyzers.mysharpe.get_analysis())
+
 cerebro.plot(volume=False)
